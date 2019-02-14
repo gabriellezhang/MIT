@@ -5,3 +5,8 @@ This is my first Github repository and my first project on Bigdata and my first 
 
 
 It's pretty much what is happenning here and I feel more like a 80 years old lady using computer or smart phone for the fist time. God it's exiting and scary.
+
+
+
+#1st step fork and clone with "git clone git://github.com/gabriellezhang/tensorflow" and "git clone git://github.com/gabriellezhang/tensorflow"
+
