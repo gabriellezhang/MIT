@@ -10,3 +10,13 @@ It's pretty much what is happenning here and I feel more like a 80 years old lad
 
 #1st step fork and clone with "git clone git://github.com/gabriellezhang/tensorflow" and "git clone git://github.com/gabriellezhang/tensorflow"
 
+
+docker run --name nanz-cassandra -p 9042:9042 -d cassandra
+docker run --link nanz-cassandra:cassandra -p 4000:80 mnist
+curl 0.0.0.0:4000 -F "file=@url"
+You can also use the browser and open 0.0.0.0:4000/html
+
+docker run -it --link nanz-cassandra:cassandra --rm cassandra cqlsh cassandra
+describe keyspaces;
+use mykeyspace;
+select * from nanztable;
