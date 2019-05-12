@@ -1,0 +1,62 @@
+Nan Zhang MNIST Report
+
+
+
+1. Introduction
+The purpose of the project is to identify the number in a hand-written picture posted by a user. The program is running in a container rather than local device, which saves the storage space and promotes portability. The interaction between the users and the interface is also monitored and recorded. The project applies some tools and knowledge in the big data field. Mnist from tensorflow is used to realize the function. 
+
+
+
+
+2. Steps
+install ubuntu 16.04
+Install python 
+Spyder
+Docker
+ Local train mnist
+Cassandra
+Docker build
+Dockerfile and requirment
+Upload docker minist_deep run to train the docker environment change home to root
+Run app.py (test past, change home to root
+Connect to docker
+Curl upload pic
+identify numbers
+
+Terminal Code:
+
+docker run --name nanz-cassandra -p 9042:9042 -d cassandra 
+docker exec -it nanz-cassandra cqlsh
+docker run --link nanz-cassandra:cassandra -p 4000:80 mnist
+local: Dockerfile.txt和requirements.txt目录中docker buid -t python3-tensorflow
+docker run -it --name python3-tensorflow --link nanz-cassandra:cassandra -p 4000:80 python3-tensorflow
+docker inspect -f '{{.ID}}' python3-tensorflow 
+docker run -it --link nanz-cassandra:cassandra --rm cassandra cqlsh cassandra
+describe keyspaces;
+use mykeyspace;
+select * from nanztable;
+docker images 
+sudo docker exec -it container ID bash
+docker start nanz-cassandra
+docker exec -it nanz-cassandra cqlsh(use nankeyspace;
+Select * from nantable;
+sudo docker exec -it 
+curl localhost:4000/upload -F "file=@picname“ 
+curl 0.0.0.0:4000 -F "file=@url"(can also use the browser and open 0.0.0.0:4000/html
+
+
+
+
+
+
+3. Achievements 
+My local test does not pass but I guess the main  purpose of this project is achieved beyond my expectation. Everything was new to me before, but now I am proud what I know.
+
+I got a data plateform  testing position at a fintech company even though I am an accounting background student and my company is currently using DOCKER!! And I am familiar with Oracle and MongoDB now. I could not imagine it before. The main reason of me getting the job is this program and python I learnt at UIUC. I started this job on April 10th and now I have finished and pushed 3 demands.
+
+During March and April, I finished two UIUC  data anlytics course project(each takes 4 weeks with 4 or 5 people in the group): The classical EY P-card auditing using python and Excel pivot table (the main purpose is to compare the two) and the Chicago Yellow Cab big data analysis using Python and Tableau as team leader and I do most of both projects using ubuntu. I guess there is still long way to go for me to learn more about Linux.
+
+I am more clear with my career path. I just got admitted to UTD for Econ PhD program. Now I know exactly where I am and where I want to be as an accounting background student familiar with database,  programming tools and github. 
+
+
+My conquest is the Sea of Stars.
