@@ -8,14 +8,33 @@ It's pretty much what is happenning here and I feel more like a 80 years old lad
 
 
 
-#1st step fork and clone with "git clone git://github.com/gabriellezhang/tensorflow" and "git clone git://github.com/gabriellezhang/tensorflow"
+fork and clone with "git clone git://github.com/gabriellezhang/tensorflow" and "git clone git://github.com/gabriellezhang/tensorflow"
 
 
-docker run --name nanz-cassandra -p 9042:9042 -d cassandra
+\\\\\\
+
+Steps:
+Docker build
+Dockerfile and requirment
+Upload docker minist_deep run to train the docker environment change home to root
+Run app.py (test past, change home to root
+Connect to docker
+Curl upload pic
+identify numbers
+
+
+
+
+docker run --name nanz-cassandra -p 9042:9042 -d cassandra 
+docker exec -it nanz-cassandra cqlsh
 docker run --link nanz-cassandra:cassandra -p 4000:80 mnist
+local: Dockerfile.txt和requirements.txt目录中docker buid -t python3-tensorflow
+docker run -it --name python3-tensorflow --link nanz-cassandra:cassandra -p 4000:80 python3-tensorflow
+docker inspect -f '{{.ID}}' python3-tensorflow 
+sudo docker exec -it 
+curl localhost:4000/upload -F "file=@picname“ 
 curl 0.0.0.0:4000 -F "file=@url"
 You can also use the browser and open 0.0.0.0:4000/html
-
 docker run -it --link nanz-cassandra:cassandra --rm cassandra cqlsh cassandra
 describe keyspaces;
 use mykeyspace;
