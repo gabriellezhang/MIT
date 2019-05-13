@@ -14,6 +14,20 @@ fork and clone with "git clone git://github.com/gabriellezhang/tensorflow" and "
 \\\\\\
 
 Steps:
+Train the mnistdeep and run test at the local computer
+
+Using local dockerfile and requirement build a mirroring and using
+docker run to start the container, connect to cassandra and enter the
+container cqlsh interface
+
+Upload the pys into the container 
+
+Using sudo enter bash to enter and cd pys to build the mnist in
+docker and run app.py
+
+Upload pic using the same port  and write the result to cassandra 
+
+Keywords:
 Docker build
 Dockerfile and requirment
 Upload docker minist_deep run to train the docker environment change home to root
@@ -21,9 +35,6 @@ Run app.py (test past, change home to root
 Connect to docker
 Curl upload pic
 identify numbers
-
-
-
 
 docker run --name nanz-cassandra -p 9042:9042 -d cassandra 
 docker exec -it nanz-cassandra cqlsh
