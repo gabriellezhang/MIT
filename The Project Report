@@ -10,38 +10,65 @@ The purpose of the project is to identify the number in a hand-written picture p
 
 2. Steps
 install ubuntu 16.04
+
 Install python 
+
 Spyder
+
 Docker
+
  Local train mnist
+ 
 Cassandra
+
 Docker build
+
 Dockerfile and requirment
+
 Upload docker minist_deep run to train the docker environment change home to root
+
 Run app.py (test past, change home to root
+
 Connect to docker
+
 Curl upload pic
+
 identify numbers
 
 Terminal Code:
 
 docker run --name nanz-cassandra -p 9042:9042 -d cassandra 
+
 docker exec -it nanz-cassandra cqlsh
+
 docker run --link nanz-cassandra:cassandra -p 4000:80 mnist
+
 local: Dockerfile.txt和requirements.txt目录中docker buid -t python3-tensorflow
+
 docker run -it --name python3-tensorflow --link nanz-cassandra:cassandra -p 4000:80 python3-tensorflow
+
 docker inspect -f '{{.ID}}' python3-tensorflow 
+
 docker run -it --link nanz-cassandra:cassandra --rm cassandra cqlsh cassandra
 describe keyspaces;
 use mykeyspace;
+
 select * from nanztable;
+
 docker images 
+
 sudo docker exec -it container ID bash
+
 docker start nanz-cassandra
+
 docker exec -it nanz-cassandra cqlsh(use nankeyspace;
+
 Select * from nantable;
+
 sudo docker exec -it 
+
 curl localhost:4000/upload -F "file=@picname“ 
+
 curl 0.0.0.0:4000 -F "file=@url"(can also use the browser and open 0.0.0.0:4000/html
 
 
@@ -57,6 +84,35 @@ I got a data plateform  testing position at a fintech company even though I am a
 During March and April, I finished two UIUC  data anlytics course project(each takes 4 weeks with 4 or 5 people in the group): The classical EY P-card auditing using python and Excel pivot table (the main purpose is to compare the two) and the Chicago Yellow Cab big data analysis using Python and Tableau as team leader and I do most of both projects using ubuntu. I guess there is still long way to go for me to learn more about Linux.
 
 I am more clear with my career path. I just got admitted to UTD for Econ PhD program. Now I know exactly where I am and where I want to be as an accounting background student familiar with database,  programming tools and github. 
+
+4.about the course
+Class 1: 
+-Basics of Python and practical usage of Linux.
+-Why Linux: 
+First of all, Linux is an open source platform. Due to its flexibility, scalability and reliability, Linux is a powerful environment for data scientist to fully use the resource of computers.
+-Why python: 
+Python has plenty of packages that are friendly to data analysis. Its support of unconventional data like image and voice makes us access data easier. There are also many mature and advanced libraries built in python which makes the process of data learning much easier. Of course, easy to learn and use is another reason that it is more friendly to users.
+
+Class 2:
+-Introduction of Docker and the advantages of it:
+Docker containers are like virtual machines, but it is much lighter. Packaging all applications with their requirements into the images, docker is like an engine that loads images and is able to run them on all OS. Different from traditional VM, it doesn’t need a guest OS. Docker gives data scientists a Big data environment on their local computer which is a convenient way to share and develop programs.
+Tasks:
+-How to build and run docker container, images
+-How to make sure the program installed python and required modules
+	Usage of Docker file, Requirements, Application
+
+-Introduction to Restful API
+Rest (representational state transfer) an architectural design for web services and web API based on HTTP protocol. (Miguel Grinberg, Designing a RESTFUL API with python and flask ,2013)
+We learned how to build restful web service using python and the flask microframework. From clients’ console, we can send requests to URIs using methods defined by the HTTP protocol and then get the result from the Restful web server. After this, we are able to write our own HTTP method (get,post,put,delete) in python.
+
+
+Class 3:
+-Introduction of database management
+We learned about features of different databases. If we want to build a database system, there are there characteristics we need to concern: volume, velocity, variety. There are also three key concepts of database: Consistency, Partition tolerance, Availability. The database has to be available to multiple regions. Therefore, partition tolerance should always be satisfied by database system. However, if we want consistency that makes sure that every database returns the same, we do need to spend a lot more computing time to check. As a result, we would lose speed of data transportation. Theoretically speaking, no database can satisfy all three conditions. Therefore, when we start to build our own database, we need to judge and weigh which feature does the data need and choose the best one for our bigdata. One of the most popular databases in bigdata, Cassandra database, excels with flexible, real-time data ingestion and analysis with no single point of failure across commodity hardware clusters. (Fan Zhang, Course PPT,2019) We then focus on Cassandra database and learn about how to build Cassandra database in docker container.
+
+Class 4:
+Introduction of data stream, spark and the native landscape of cloud. The whole cloud system is like an ecosystem that consists of infrastructure, provisioning, runtime, Orchestration & management, Application, Platform, and Observability & analysis. Every part listed there is indispensable to the big ecosystem of cloud. We generally talked about different tools from different sections and the usage of them. 
+
 
 
 My conquest is the Sea of Stars.
